@@ -1,0 +1,74 @@
+---
+import "@fontsource-variable/inter";
+import "../styles/global.css";
+import { profile, links } from "../data/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Wider content column (home page). */
+  wide?: boolean;
+}
+const { title, description = profile.homeIntro, wide = false } = Astro.props;
+const pageTitle = title ? `${title} · ${profile.name}` : profile.name;
+const path = Astro.url.pathname;
+const nav = [
+  { label: "Home", href: "/" },
+  { label: "Projects", href: "/projects/" },
+  { label: "Writing", href: "/writing/" },
+  { label: "CV", href: "/cv/" },
+];
+const visibleLinks = links.filter((l) => l.href && l.label !== "lenatriestounderstand");
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav aria-label="Main">
+        {nav.map((n) => (
+          <a href={n.href} aria-current={(n.href === "/" ? path === "/" : path.startsWith(n.href)) ? "page" : undefined}>{n.label}</a>
+        ))}
+      </nav>
+    </header>
+    <main>
+      <div class:list={["wrap", { wide }]}><slot /></div>
+    </main>
+    <footer class="site-footer">
+      <div class:list={["wrap bar", { wide }]}>
+        <span class="muted">© {new Date().getFullYear()} {profile.name}</span>
+        <span class="footer-links">
+          {visibleLinks.map((l) => <a href={l.href}>{l.label}</a>)}
+        </span>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  /* Same nav as the home page: top-left, plain text links, active item underlined. */
+  .site-header nav {
+    display: flex; flex-wrap: wrap; gap: 0.5rem 3.5rem;
+    padding: 2.75rem clamp(16px, 6vw, 6rem) 0;
+  }
+  .site-header a { color: var(--muted); text-decoration: none; font-size: 1.02rem; padding-bottom: 0.55rem; border-bottom: 1.5px solid transparent; transition: color 0.2s; }
+  .site-header a:hover { color: var(--text); }
+  .site-header a[aria-current="page"] { color: var(--text); border-color: var(--text); }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .site-footer { border-top: 1px solid var(--line); padding: 1.75rem 0; font-size: 0.88rem; color: var(--faint); }
+  .footer-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+  .footer-links a { color: var(--muted); text-decoration: none; }
+  .footer-links a:hover { color: var(--text); }
+  @media (max-width: 640px) {
+    .site-header nav { gap: 0.5rem 1.6rem; padding-top: 1.25rem; }
+    .site-header a { font-size: 0.95rem; }
+  }
+</style>

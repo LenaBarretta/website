@@ -1,0 +1,1322 @@
+[
+  {
+    "title": "RLCR from Scratch: A One-Pass Decision Model with Honest Probabilities",
+    "description": "A model reads a support ticket, picks a department, and returns 0.94. RLCR — training that number with a reward only an honest probability can maximise — and a small typed-decision model built from an ordinary encoder: one forward pass, every option a parallel branch, and the same weights trained seven ways to find out what the reinforcement learning actually adds.",
+    "date": "2026-09-20",
+    "updated": "2026-09-22",
+    "track": "LLM",
+    "tags": [
+      "rlcr",
+      "calibration",
+      "reinforcement-learning",
+      "uncertainty",
+      "proper-scoring-rules",
+      "decision-models"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/llm/024-rlcr/",
+    "image": "/notes/llm--024-rlcr.webp"
+  },
+  {
+    "title": "Dark Knowledge: What a Classifier Says After Its Answer",
+    "description": "A trained classifier answers with one class and a list of numbers nobody reads. Those numbers say which wrong answers it considered nearly right, no label can carry them, and they are most of what a distilled student learns from.",
+    "date": "2026-09-19",
+    "updated": "2026-09-19",
+    "track": "Shorts",
+    "tags": [
+      "knowledge-distillation",
+      "deep-learning",
+      "softmax",
+      "dark-knowledge"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/042-dark-knowledge/",
+    "image": ""
+  },
+  {
+    "title": "From Python Call to GPU Kernel: The C++ Underneath ML Libraries",
+    "description": "One line of Python — index.search(query, k=10) — taken apart layer by layer, with a small nearest-neighbour library written in C++ and CUDA to take it apart with. Where numbers live and who frees them, what a copy of a gigabyte costs, why the order of additions changes both the speed and the answer, when an abstraction is free and when it is ruinous, what a template costs to compile, what happens between the call returning and the GPU finishing — and why the same search runs 25 times faster after eight rewrites that change nothing about what it computes. Measured end to end on a Kaggle T4.",
+    "date": "2026-09-19",
+    "updated": "",
+    "track": "ML Systems",
+    "tags": [
+      "c++",
+      "cuda",
+      "pybind11",
+      "memory",
+      "cache",
+      "templates",
+      "simd",
+      "python-bindings",
+      "nearest-neighbour",
+      "ml-systems"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/ml-systems/004-python-call-to-gpu-kernel/",
+    "image": "/notes/ml-systems--004-python-call-to-gpu-kernel.webp"
+  },
+  {
+    "title": "How LLM Inference Actually Works: Where the Time Goes on a Real GPU",
+    "description": "What a GPU is actually doing while a language model answers: the generation loop, the prefill pass that reads the prompt and the decode steps that write the answer, the two waits a user feels — time to first token and time per output token — and why the second is limited by moving the model's weights through memory. Measured end to end on a Tesla T4, including why a token costs nine times what its bytes say, what a real kernel trace shows instead, and how latency and throughput pull apart when many people share one card.",
+    "date": "2026-09-18",
+    "updated": "",
+    "track": "ML Systems",
+    "tags": [
+      "llm",
+      "inference",
+      "prefill",
+      "decode",
+      "kv-cache",
+      "ttft",
+      "latency",
+      "throughput",
+      "cuda-graphs",
+      "ml-systems"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/ml-systems/003-llm-inference/",
+    "image": "/notes/ml-systems--003-llm-inference.webp"
+  },
+  {
+    "title": "Matrix Multiplication: The Operation Behind Modern AI",
+    "description": "Most of the arithmetic in a neural network is matrix multiplication. Written the obvious way it is correct, and fifty times slower than torch.mm on the same GPU. Where that difference comes from, one change at a time on a Tesla T4: coalescing, tiles, shared memory, registers, tensor cores and precision — and why almost all of it is about where the numbers are kept rather than how they are multiplied.",
+    "date": "2026-09-12",
+    "updated": "",
+    "track": "ML Systems",
+    "tags": [
+      "matrix-multiplication",
+      "cuda",
+      "tiling",
+      "shared-memory",
+      "tensor-cores",
+      "cublas",
+      "ml-systems"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/ml-systems/002-matrix-multiplication/",
+    "image": "/notes/ml-systems--002-matrix-multiplication.webp"
+  },
+  {
+    "title": "How GPUs Actually Run Machine Learning",
+    "description": "Why the same GPU is nineteen times faster than the CPU at one operation, eleven times at the next, and slower at a third — worked out on a real Tesla T4, from two numbers per machine: how fast it computes and how fast it moves bytes. Along the way: warps and SIMT, latency hiding, the memory hierarchy, arithmetic intensity, the roofline, and a power limit that moves the ceiling.",
+    "date": "2026-09-11",
+    "updated": "",
+    "track": "ML Systems",
+    "tags": [
+      "gpu",
+      "cuda",
+      "roofline",
+      "memory-bandwidth",
+      "arithmetic-intensity",
+      "ml-systems"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/ml-systems/001-how-gpus-run-ml/",
+    "image": "/notes/ml-systems--001-how-gpus-run-ml.webp"
+  },
+  {
+    "title": "Training Neural Networks: Backprop, Regularization, and Everything in Between",
+    "description": "One number at the end of the network has to become an instruction for every number inside it. That trip is the whole of training: backpropagation as the chain rule run backwards through a graph, the product of many numbers that decides whether the instruction survives the journey, the initialization arithmetic that keeps that product near one and the normalization, clipping and precision choices that answer the other half of the problem, and regularization as the deliberate corruption that makes the result generalize — every claim carried by one worked example, from two weights done by hand to a network that overfits.",
+    "date": "2026-08-31",
+    "updated": "",
+    "track": "Deep Learning",
+    "tags": [
+      "deep-learning",
+      "backpropagation",
+      "gradient-descent",
+      "initialization",
+      "regularization"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/deep-learning/013-training-neural-networks/",
+    "image": "/notes/deep-learning--013-training-neural-networks.webp"
+  },
+  {
+    "title": "Learning Rules from Examples: How Can a Model Discover a Hidden Rule?",
+    "description": "A tiny synthetic world where the rule is hidden and the evidence is controlled. Version spaces and what a dataset actually tells you, why a deterministic likelihood makes generalization entirely a matter of prior, shortcut features, expected information gain and active learning, compositional and length generalization, bottom-up program search with observational-equivalence pruning, LLM-guided synthesis, and libraries that grow their own primitives — each turned into a small experiment with a deterministic verifier.",
+    "date": "2026-08-09",
+    "updated": "",
+    "track": "LLM",
+    "tags": [
+      "induction",
+      "program-synthesis",
+      "inductive-bias",
+      "hypothesis-space",
+      "version-space",
+      "active-learning",
+      "compositional-generalization",
+      "length-generalization",
+      "search",
+      "dsl"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/llm/022-learning-rules-from-examples/",
+    "image": "/notes/llm--022-learning-rules-from-examples.webp"
+  },
+  {
+    "title": "Teaching a Neural Network to Play Go",
+    "description": "Building a tiny AlphaGo from scratch on a 5×5 board: board representation, a small CNN policy network, a value network, and then Monte Carlo Tree Search — with each piece introduced only when the previous version visibly runs out of road. Ends at a self-play loop that is recognisably AlphaZero in miniature.",
+    "date": "2026-08-09",
+    "updated": "",
+    "track": "Deep Learning",
+    "tags": [
+      "reinforcement-learning",
+      "monte-carlo-tree-search",
+      "self-play",
+      "cnn",
+      "alphago",
+      "game-ai"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/deep-learning/010-neural-go-player/",
+    "image": "/notes/deep-learning--010-neural-go-player.webp"
+  },
+  {
+    "title": "Eigendecomposition: Reading a Matrix in Its Own Language",
+    "description": "Once you know a matrix's un-turnable directions, you can rewrite the whole thing as three simple moves: rotate, stretch, rotate back. That's eigendecomposition.",
+    "date": "2026-07-02",
+    "updated": "2026-07-02",
+    "track": "Shorts",
+    "tags": [
+      "linear-algebra",
+      "eigenvectors",
+      "pca",
+      "spectral-clustering"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/030-eigendecomposition/",
+    "image": ""
+  },
+  {
+    "title": "Eigensolvers: Why Finding Eigenvectors Is a Whole Job",
+    "description": "Eigenvectors are beautiful on paper. Computing them for a 100,000×100,000 matrix is an engineering problem — and the tool that does it, iteratively, is an eigensolver.",
+    "date": "2026-07-02",
+    "updated": "2026-07-02",
+    "track": "Shorts",
+    "tags": [
+      "linear-algebra",
+      "eigenvectors",
+      "numerical-computing",
+      "spectral-clustering"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/031-eigensolvers/",
+    "image": ""
+  },
+  {
+    "title": "Eigenvectors: The Directions a Matrix Won't Turn",
+    "description": "A matrix turns and stretches every arrow in space — except for a few special directions it only stretches. Those are eigenvectors, the natural grain of the transformation.",
+    "date": "2026-07-02",
+    "updated": "2026-07-02",
+    "track": "Shorts",
+    "tags": [
+      "linear-algebra",
+      "eigenvectors",
+      "pca",
+      "spectral-clustering"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/029-eigenvectors/",
+    "image": ""
+  },
+  {
+    "title": "Mechanistic Interpretability: Looking Inside the Black Box",
+    "description": "What it actually means to reverse-engineer a neural network into features and circuits: the residual stream as a linear object, the linear representation hypothesis, superposition and why features outnumber neurons, sparse autoencoders as dictionary learning, the QK/OV decomposition of attention, induction heads, and the causal methods — activation and path patching — that turn a plausible story into a verified mechanism.",
+    "date": "2026-06-17",
+    "updated": "2026-07-03",
+    "track": "Deep Learning",
+    "tags": [
+      "interpretability",
+      "mechanistic-interpretability",
+      "superposition",
+      "sparse-autoencoders",
+      "circuits"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/deep-learning/009-mechanistic-interpretability/",
+    "image": "/notes/deep-learning--009-mechanistic-interpretability.webp"
+  },
+  {
+    "title": "RLAIF: When the Labeler Is a Model",
+    "description": "Reinforcement Learning from AI Feedback swaps the human labeler for a model: a capable model judges which of two responses is better, and those AI preferences train the reward. Constitutional AI is its most influential form — and the values don't disappear, they move and become explicit.",
+    "date": "2026-06-16",
+    "updated": "2026-06-16",
+    "track": "Shorts",
+    "tags": [
+      "rlaif",
+      "constitutional-ai",
+      "reward-model",
+      "alignment"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/028-rlaif/",
+    "image": ""
+  },
+  {
+    "title": "RLHF: From Likelihood to Preference in Three Stages",
+    "description": "Reinforcement Learning from Human Feedback is how a model is bent from optimizing likelihood to optimizing preference: an SFT base, a reward model trained on human comparisons, and a policy optimized against that reward under a KL leash.",
+    "date": "2026-06-16",
+    "updated": "2026-06-16",
+    "track": "Shorts",
+    "tags": [
+      "rlhf",
+      "reward-model",
+      "ppo",
+      "preference-learning"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/027-rlhf/",
+    "image": ""
+  },
+  {
+    "title": "SFT: Imitation, and the Ceiling It Hits",
+    "description": "Supervised fine-tuning is the imitation step of post-training: show the model (prompt → ideal answer) pairs and minimize cross-entropy on the target tokens. It teaches the format of being an assistant — and hits a ceiling that preference learning exists to break.",
+    "date": "2026-06-16",
+    "updated": "2026-06-16",
+    "track": "Shorts",
+    "tags": [
+      "sft",
+      "fine-tuning",
+      "post-training",
+      "instruction-tuning"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/026-sft/",
+    "image": ""
+  },
+  {
+    "title": "How LLMs Learn Human Preferences: RLHF, RLAIF and Beyond",
+    "description": "How a next-token predictor is bent toward what humans prefer: reward modeling, PPO, RLAIF/Constitutional AI, and the offline-preference family — and why so much of a model's 'personality' and 'emotional' behavior is decided in this stage.",
+    "date": "2026-06-15",
+    "updated": "",
+    "track": "LLM",
+    "tags": [
+      "rlhf",
+      "rlaif",
+      "reward-model",
+      "ppo",
+      "dpo"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/llm/015-how-llms-learn-preferences/",
+    "image": "/notes/llm--015-how-llms-learn-preferences.webp"
+  },
+  {
+    "title": "Why Different Models Feel Like Different Personalities",
+    "description": "Same engine, different knobs: why one model reads as warm and another as businesslike. Traces 'personality' to concrete training choices — data mix, preference guidelines, reward model, safety tuning, character training — and folds in sycophancy as a personality artifact of RLHF.",
+    "date": "2026-06-15",
+    "updated": "",
+    "track": "LLM",
+    "tags": [
+      "personality",
+      "rlhf"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/llm/016-model-personalities/",
+    "image": "/notes/llm--016-model-personalities.webp"
+  },
+  {
+    "title": "Why LLMs Sound Emotional — and Whether They Understand Emotion",
+    "description": "Two halves of one question. Why an LLM's emotional language is generated, not felt, and where it comes from — preference data, reward models, safety tuning, system prompts; and whether it can actually understand emotion in others — theory of mind, the recognition benchmarks, and where the fluent performance turns brittle.",
+    "date": "2026-06-15",
+    "updated": "",
+    "track": "LLM",
+    "tags": [
+      "emotion",
+      "empathy",
+      "safety-tuning",
+      "theory-of-mind"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/llm/017-sounding-emotional/",
+    "image": "/notes/llm--017-sounding-emotional.webp"
+  },
+  {
+    "title": "Attention Is a Kernel Method in Disguise",
+    "description": "Everyone knows attention is softmax(QKᵀ/√d)V. Fewer notice it's structurally the same thing as kernel regression — Nadaraya-Watson smoothing from 1964, with a learned similarity. Seeing the kernel underneath tells you immediately how to make attention linear.",
+    "date": "2026-06-07",
+    "updated": "2026-06-07",
+    "track": "Shorts",
+    "tags": [
+      "attention",
+      "transformers",
+      "kernel-methods"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/024-attention-as-kernel/",
+    "image": ""
+  },
+  {
+    "title": "Why KL Divergence Is Everywhere in ML",
+    "description": "KL divergence turns up in cross-entropy training, VAEs and variational inference, knowledge distillation, and the RLHF leash. That isn't a coincidence — a huge fraction of ML is secretly the sentence 'make distribution q close to distribution p,' and KL is what that sentence reduces to.",
+    "date": "2026-06-07",
+    "updated": "2026-06-07",
+    "track": "Shorts",
+    "tags": [
+      "probability",
+      "information-theory",
+      "kl-divergence"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/023-kl-divergence-everywhere/",
+    "image": ""
+  },
+  {
+    "title": "Why MLE Becomes Cross-Entropy",
+    "description": "Everyone trains classifiers with cross-entropy, far fewer can say why that loss and not another. It isn't a design choice — it falls out of one principle: maximize the probability the model assigns to the data. Cross-entropy, log-loss, MSE, and KL are the same idea wearing four different hats.",
+    "date": "2026-06-07",
+    "updated": "2026-06-07",
+    "track": "Shorts",
+    "tags": [
+      "probability",
+      "loss-functions",
+      "classification"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/022-mle-cross-entropy/",
+    "image": ""
+  },
+  {
+    "title": "Why the ELBO Isn't a Random Formula",
+    "description": "The evidence lower bound looks like a formula handed down from on high. It isn't invented — it's forced. When the evidence integral is intractable but you still want maximum likelihood, there is essentially one move available, and the ELBO is what it produces.",
+    "date": "2026-06-07",
+    "updated": "2026-06-07",
+    "track": "Shorts",
+    "tags": [
+      "probability",
+      "variational-inference",
+      "generative-models"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/025-elbo-derivation/",
+    "image": ""
+  },
+  {
+    "title": "Fine-Tuning LLMs: Modern Post-Training Deep Dive",
+    "description": "A reference-style deep dive into the modern knobs around post-training: preference optimization variants, LoRA and PEFT methods, memory-efficient full fine-tuning, model merging, distillation, tooling, and serving. Read this after the pipeline note, once you know which stage you actually need.",
+    "date": "2026-05-30",
+    "updated": "",
+    "track": "LLM",
+    "tags": [
+      "fine-tuning",
+      "dpo",
+      "lora",
+      "qlora",
+      "peft",
+      "model-merging",
+      "rlhf",
+      "post-training"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/llm/014-modern-fine-tuning-deep-dive/",
+    "image": "/notes/llm--014-modern-fine-tuning-deep-dive.webp"
+  },
+  {
+    "title": "Fine-Tuning LLMs: Post-Training Is a Pipeline, Not a Step",
+    "description": "Post-training is not one fine-tuning method. It is a sequence of objective signals. Continued pretraining teaches substrate, SFT teaches examples and defaults, preference optimization teaches comparisons, RLVR teaches verifiable trajectories, and distillation transfers the resulting behavior. The important design question is not which acronym is fashionable, but which stage matches the behavior you are trying to install.",
+    "date": "2026-05-30",
+    "updated": "",
+    "track": "LLM",
+    "tags": [
+      "fine-tuning",
+      "post-training",
+      "sft",
+      "dpo",
+      "rlvr",
+      "grpo",
+      "distillation"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/llm/013-fine-tuning-pipelines/",
+    "image": "/notes/llm--013-fine-tuning-pipelines.webp"
+  },
+  {
+    "title": "Fine-Tuning LLMs: When the Weight Delta Is Worth It",
+    "description": "Fine-tuning is not prompt repair. It is a decision to write a reusable parameter delta into an existing checkpoint. That delta changes future logits, defaults, and trade-offs. This note is about when that is worth doing: what fine-tuning actually buys, how to tell whether a gap belongs in the weights, and why data, evals, forgetting, and probability shape matter more than the slogan 'just fine-tune it'.",
+    "date": "2026-05-30",
+    "updated": "",
+    "track": "LLM",
+    "tags": [
+      "fine-tuning",
+      "residual-stream"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/llm/011-fine-tuning-llms/",
+    "image": "/notes/llm--011-fine-tuning-llms.webp"
+  },
+  {
+    "title": "Bi-encoder vs Cross-encoder: Why Retrieval Is Two-Stage",
+    "description": "A bi-encoder encodes query and document independently; a cross-encoder reads them together. One is cheap and slightly dumb, the other is expensive and much sharper. Modern retrieval uses both — and the two-stage cascade is the whole point.",
+    "date": "2026-05-28",
+    "updated": "2026-06-07",
+    "track": "Shorts",
+    "tags": [
+      "embeddings",
+      "retrieval",
+      "reranking"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/017-bi-encoder-vs-cross-encoder/",
+    "image": ""
+  },
+  {
+    "title": "BM25 vs Dense Embeddings: Why Hybrid Retrieval Wins",
+    "description": "Two retrieval philosophies — lexical evidence vs learned geometry — fail in exactly opposite ways. That's why production retrieval is rarely pure dense, and why Reciprocal Rank Fusion ended up everywhere.",
+    "date": "2026-05-28",
+    "updated": "2026-06-07",
+    "track": "Shorts",
+    "tags": [
+      "embeddings",
+      "retrieval",
+      "bm25",
+      "hybrid"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/016-bm25-vs-dense/",
+    "image": ""
+  },
+  {
+    "title": "Cosine, Dot Product, Euclidean: When Are They the Same Thing?",
+    "description": "Three different similarity measures that, on normalized embeddings, all rank the same. Why cosine is the convention, why dot is the implementation, and when the choice actually matters.",
+    "date": "2026-05-28",
+    "updated": "2026-05-28",
+    "track": "Shorts",
+    "tags": [
+      "embeddings",
+      "similarity",
+      "retrieval"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/014-cosine-dot-euclidean/",
+    "image": ""
+  },
+  {
+    "title": "HNSW: How Vector Search Stays Logarithmic",
+    "description": "The graph that turned vector search from O(N) into O(log N). A hierarchy of small-world graphs, three tunable parameters, and the recall/latency trade-off underneath every production vector database.",
+    "date": "2026-05-28",
+    "updated": "2026-06-07",
+    "track": "Shorts",
+    "tags": [
+      "embeddings",
+      "hnsw",
+      "ann",
+      "vector-databases"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/015-hnsw-graph-index/",
+    "image": ""
+  },
+  {
+    "title": "Kafka Partitions and Consumer Groups: Where Parallelism Lives",
+    "description": "Partition count is the ceiling on parallel consumption. Ordering is a per-partition guarantee, not a per-topic one. Two facts that decide most Kafka architecture questions.",
+    "date": "2026-05-28",
+    "updated": "2026-06-07",
+    "track": "Shorts",
+    "tags": [
+      "kafka",
+      "streaming",
+      "distributed-systems"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/019-kafka-partitions-consumer-groups/",
+    "image": ""
+  },
+  {
+    "title": "Parquet vs CSV: Why Columns Beat Rows for Analytics",
+    "description": "The same data, two layouts on disk. For analytical queries that touch a few columns out of many, Parquet reads tens of times less from disk than CSV — and that gap is structural, not a benchmark artifact.",
+    "date": "2026-05-28",
+    "updated": "2026-06-07",
+    "track": "Shorts",
+    "tags": [
+      "storage",
+      "parquet",
+      "csv",
+      "columnar"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/018-parquet-vs-csv/",
+    "image": ""
+  },
+  {
+    "title": "STL Decomposition: Trend + Seasonal + Residual",
+    "description": "Three components, one additive identity. STL splits a series into trend, seasonality, and residual so you can see what's actually in it before modeling — and the same decomposition idea propagates into modern deep architectures like N-BEATS.",
+    "date": "2026-05-28",
+    "updated": "2026-06-07",
+    "track": "Shorts",
+    "tags": [
+      "time-series",
+      "stl",
+      "decomposition",
+      "eda"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/021-stl-decomposition/",
+    "image": ""
+  },
+  {
+    "title": "Temperature, top_k, top_p: How LLMs Pick the Next Token",
+    "description": "Three sampling knobs, three different operations on the same next-token distribution. Temperature reshapes; top_k truncates by count; top_p truncates by cumulative probability. They are not interchangeable.",
+    "date": "2026-05-28",
+    "updated": "2026-06-07",
+    "track": "Shorts",
+    "tags": [
+      "llm",
+      "sampling",
+      "inference"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/013-temperature-topk-topp/",
+    "image": ""
+  },
+  {
+    "title": "The KV Cache in One Formula",
+    "description": "Why long context costs memory, not flops. The KV-cache size formula has six factors — once you can read it, every attention-variant design choice falls into place.",
+    "date": "2026-05-28",
+    "updated": "2026-06-07",
+    "track": "Shorts",
+    "tags": [
+      "llm",
+      "kv-cache",
+      "inference",
+      "long-context"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/011-kv-cache-formula/",
+    "image": ""
+  },
+  {
+    "title": "Walk-Forward Validation: Why k-Fold Leaks the Future",
+    "description": "Random k-fold CV reshuffles time. On time series that means training on the future to predict the past — and quietly inflating every metric. The correct alternatives are expanding-window and rolling-window CV.",
+    "date": "2026-05-28",
+    "updated": "2026-06-07",
+    "track": "Shorts",
+    "tags": [
+      "time-series",
+      "cross-validation",
+      "evaluation"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/020-walk-forward-validation/",
+    "image": ""
+  },
+  {
+    "title": "What is Grouped-Query Attention (GQA)?",
+    "description": "GQA sits between full multi-head attention and MQA: query heads are partitioned into a small number of groups, and each group shares one K/V set. Most of the KV-cache savings of MQA, most of the head diversity of MHA — and a cheap conversion path from existing checkpoints.",
+    "date": "2026-05-28",
+    "updated": "2026-06-07",
+    "track": "Shorts",
+    "tags": [
+      "llm",
+      "attention",
+      "gqa",
+      "kv-cache"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/010-grouped-query-attention/",
+    "image": ""
+  },
+  {
+    "title": "Why \"strawberry\" Has Three R's (and the Model Can't Count Them)",
+    "description": "The most famous LLM bug — miscounting letters in a word — is not a reasoning failure. It is a representation failure. The model isn't fed letters, it's fed tokens. Once you know what a token actually is, the bug is the only outcome that could have happened.",
+    "date": "2026-05-28",
+    "updated": "2026-06-07",
+    "track": "Shorts",
+    "tags": [
+      "llm",
+      "tokenization",
+      "bpe"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/012-strawberry-tokenization/",
+    "image": ""
+  },
+  {
+    "title": "ARIMA and SARIMA, on one page",
+    "description": "ARIMA in three letters: AutoRegression, Integration, Moving Average. SARIMA adds seasonal versions of each. Together they handle the linear, stationary case — which covers a surprising amount of forecasting.",
+    "date": "2026-05-27",
+    "updated": "2026-05-27",
+    "track": "Shorts",
+    "tags": [
+      "time-series",
+      "arima",
+      "sarima",
+      "classical-forecasting"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/003-arima-sarima/",
+    "image": ""
+  },
+  {
+    "title": "Interpolating a time series",
+    "description": "Each interpolation method makes a different assumption about what was happening between known measurements. The right method depends on what the signal actually does between samples, not on what's the default.",
+    "date": "2026-05-27",
+    "updated": "2026-05-27",
+    "track": "Shorts",
+    "tags": [
+      "time-series",
+      "interpolation",
+      "preprocessing"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/007-interpolate-time-series/",
+    "image": ""
+  },
+  {
+    "title": "Time series data preprocessing — the order that matters",
+    "description": "TS preprocessing is a pipeline, not a checklist. The order of steps changes the result — scaling before handling missing values is the common trap.",
+    "date": "2026-05-27",
+    "updated": "2026-05-27",
+    "track": "Shorts",
+    "tags": [
+      "time-series",
+      "preprocessing",
+      "data-cleaning"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/008-time-series-data-preprocessing/",
+    "image": ""
+  },
+  {
+    "title": "Time series vs panel data — what stacking series actually changes",
+    "description": "Time series is one entity over time. Panel data is many entities over time. The new dimension — unit-level heterogeneity — is what panel methods exist to handle.",
+    "date": "2026-05-27",
+    "updated": "2026-05-27",
+    "track": "Shorts",
+    "tags": [
+      "time-series",
+      "panel-data",
+      "econometrics"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/009-time-series-vs-panel-data/",
+    "image": ""
+  },
+  {
+    "title": "Univariate vs multivariate time series",
+    "description": "Univariate is one signal over time. Multivariate is many signals over time. The decision between them is about whether the extra signals actually carry information about the target.",
+    "date": "2026-05-27",
+    "updated": "2026-05-27",
+    "track": "Shorts",
+    "tags": [
+      "time-series",
+      "fundamentals"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/002-univariate-vs-multivariate-time-series/",
+    "image": ""
+  },
+  {
+    "title": "What is a TCN?",
+    "description": "TCN stands for Temporal Convolutional Network — a causal CNN with dilated convolutions that gives sequence models exponential receptive field for the cost of linear depth.",
+    "date": "2026-05-27",
+    "updated": "2026-05-27",
+    "track": "Shorts",
+    "tags": [
+      "time-series",
+      "tcn",
+      "deep-learning"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/001-what-is-tcn/",
+    "image": ""
+  },
+  {
+    "title": "What is an LLM agent architecture?",
+    "description": "An LLM agent is an LLM wrapped in a loop that gives it tools, state, and a stopping rule. The architecture is the shape of that loop.",
+    "date": "2026-05-27",
+    "updated": "2026-05-27",
+    "track": "Shorts",
+    "tags": [
+      "llm",
+      "agents",
+      "architecture"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/005-llm-agent-architectures/",
+    "image": ""
+  },
+  {
+    "title": "What is Multi-head Latent Attention (MLA)?",
+    "description": "MLA stores a low-rank latent representation for each token and uses learned projections to produce the K/V information needed by attention at decode time. A different way to attack the KV-cache problem than MQA or GQA — trading a sharing bottleneck for a rank one.",
+    "date": "2026-05-27",
+    "updated": "2026-05-27",
+    "track": "Shorts",
+    "tags": [
+      "llm",
+      "attention",
+      "mla",
+      "kv-cache",
+      "deepseek"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/006-multi-head-latent-attention/",
+    "image": ""
+  },
+  {
+    "title": "What is Multi-Query Attention?",
+    "description": "Why production LLM decoders share K and V across attention heads — and the 8–32× memory cut that follows.",
+    "date": "2026-05-27",
+    "updated": "2026-05-27",
+    "track": "Shorts",
+    "tags": [
+      "llm",
+      "attention",
+      "mqa",
+      "kv-cache"
+    ],
+    "short": true,
+    "href": "https://lenatriestounderstand.com/notes/shorts/004-multi-query-attention/",
+    "image": ""
+  },
+  {
+    "title": "Embeddings: How Geometry Pretends to Be Meaning",
+    "description": "Embeddings aren't an encoding of text — they're an attempt to make geometry behave as if it carried meaning. What it means to compress text into a fixed-length vector, how contrastive learning turns statistical structure into distances and directions, why cosine similarity works (and when it stops), how dimension, chunking, context window, and reranking change the physics of a retrieval pipeline, and where embeddings lie usefully.",
+    "date": "2026-05-19",
+    "updated": "2026-06-08",
+    "track": "Embeddings and Retrieval",
+    "tags": [
+      "embeddings"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/embeddings-and-retrieval/001-embeddings/",
+    "image": "/notes/embeddings-and-retrieval--001-embeddings.webp"
+  },
+  {
+    "title": "How Text Became Geometry",
+    "description": "Sixty years of incremental work behind the modern embedding vector. From bag-of-words and BM25, through Word2Vec's distributional hypothesis, to contextual embeddings and contrastive retrieval models. The point isn't trivia — it's that each older idea is still in production today, and the picture only makes sense once you've seen the road that led here.",
+    "date": "2026-05-19",
+    "updated": "2026-05-21",
+    "track": "Embeddings and Retrieval",
+    "tags": [
+      "embeddings",
+      "history",
+      "retrieval"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/embeddings-and-retrieval/010-text-became-geometry/",
+    "image": "/notes/embeddings-and-retrieval--010-text-became-geometry.webp"
+  },
+  {
+    "title": "The Hindsight Corpus: Time in LLM Pretraining Data",
+    "description": "Saying a model was 'trained on text written before T' invites a picture of human knowledge as of T. The actual corpus is volumetrically skewed toward recent years, dominated by retroactively-edited sources like Wikipedia, missing reliable per-document timestamps, and survivor-biased for older periods. The mechanisms, the failure modes that fall out, what's silently absent from datasheets, and what time-aware pretraining would have to do differently.",
+    "date": "2026-05-13",
+    "updated": "2026-05-13",
+    "track": "LLM",
+    "tags": [
+      "pretraining",
+      "training-data",
+      "temporal"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/llm/008-time-in-corpus/",
+    "image": "/notes/llm--008-time-in-corpus.webp"
+  },
+  {
+    "title": "The Missing Now: Temporal Grounding in LLM Agents",
+    "description": "A chat transcript preserves order but not elapsed time, world state, or whether earlier hypotheses have expired. For long-running agents, temporal grounding is a runtime problem, not a model problem — what 'now' actually is, the failure modes that fall out when context gets treated as state, the primitives (clocks, event logs, state reducers, expectations, monitors) that close the gap, and how to measure whether it works.",
+    "date": "2026-05-13",
+    "updated": "2026-05-13",
+    "track": "LLM",
+    "tags": [
+      "agents",
+      "temporal-grounding",
+      "state-management"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/llm/010-temporal-grounding/",
+    "image": "/notes/llm--010-temporal-grounding.webp"
+  },
+  {
+    "title": "Attention Is All You Need — But Not All Attention Is the Same",
+    "description": "Why modern LLMs are no longer just decoder-only transformers with standard multi-head attention. Attention has become a design space — MHA, MQA, GQA, MLA, sliding-window, sparse, linear, recurrent, hybrid — plus position encoding, attention sinks, and KV-cache compression. Each variant solves a different bottleneck.",
+    "date": "2026-05-09",
+    "updated": "",
+    "track": "LLM",
+    "tags": [
+      "attention",
+      "kv-cache",
+      "long-context"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/llm/007-attention-variants/",
+    "image": "/notes/llm--007-attention-variants.webp"
+  },
+  {
+    "title": "The Physics of Hallucination",
+    "description": "What hallucination looks like at the level of the transformer's internal computation — distributed representations, signal competition in the residual stream, the softmax bottleneck, the activation-output gap, and the architectural reasons there is no first-class epistemic channel.",
+    "date": "2026-05-08",
+    "updated": "2026-05-08",
+    "track": "LLM",
+    "tags": [
+      "hallucinations"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/llm/005-hallucinations/",
+    "image": "/notes/llm--005-hallucinations.webp"
+  },
+  {
+    "title": "Anomaly Detection: Statistical Baselines",
+    "description": "An introduction to statistical baseline methods for time-series anomaly detection: Z-Score, IQR, moving averages, simple ensembles, and evaluation metrics.",
+    "date": "2026-04-28",
+    "updated": "2026-05-03",
+    "track": "Time Series",
+    "tags": [
+      "anomaly-detection",
+      "z-score\"",
+      "iqr",
+      "ensemble-methods"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/time-series/003-anomaly-detection/",
+    "image": "/notes/time-series--003-anomaly-detection.webp"
+  },
+  {
+    "title": "Causal ML Beyond Econometrics",
+    "description": "Causal ML at the meeting point of econometrics and ML — ATE vs CATE, uplift modelling, DML and orthogonal-moments inference, causal forests, counterfactual prediction, off-policy evaluation, and the standard mistakes from treating predictive models as causal.",
+    "date": "2026-04-28",
+    "updated": "2026-06-07",
+    "track": "Econometrics",
+    "tags": [
+      "causal-ml",
+      "uplift",
+      "dml",
+      "cate"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/econometrics/006-causal-ml/",
+    "image": "/notes/econometrics--006-causal-ml.webp"
+  },
+  {
+    "title": "Chunking Strategies",
+    "description": "Chunking turns out to be more architectural than it looks. A walk through what a chunk has to satisfy at six different stages simultaneously, what RecursiveCharacterTextSplitter actually does under the hood, and what the 2024–2026 toolbox — late chunking, contextual retrieval, contextualized chunk embeddings, BGE-M3 multi-functionality, ColBERT late interaction — is actually for.",
+    "date": "2026-04-28",
+    "updated": "2026-05-26",
+    "track": "Embeddings and Retrieval",
+    "tags": [
+      "chunking",
+      "rag"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/embeddings-and-retrieval/006-chunking/",
+    "image": "/notes/embeddings-and-retrieval--006-chunking.webp"
+  },
+  {
+    "title": "Classical Statistical Forecasting: ARIMA, SARIMA, and SARIMAX",
+    "description": "A practical guide to ARIMA, SARIMA, and SARIMAX: how classical statistical forecasting models handle autocorrelation, differencing, seasonality, external regressors, diagnostics, and where they still fit in modern forecasting.",
+    "date": "2026-04-28",
+    "updated": "2026-05-05",
+    "track": "Time Series",
+    "tags": [
+      "arima",
+      "sarima",
+      "sarimax",
+      "statistical-models"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/time-series/004-statistical-ts/",
+    "image": "/notes/time-series--004-statistical-ts.webp"
+  },
+  {
+    "title": "Clustering in Practice",
+    "description": "Practical wrap-up for clustering work — cluster labelling, two-corpus comparison, validation, choosing K when it isn't known, hyperparameter tuning order, common mistakes, and reproducibility.",
+    "date": "2026-04-28",
+    "updated": "2026-06-28",
+    "track": "Classical ML",
+    "tags": [
+      "clustering",
+      "topic-modelling"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/classical-ml/017-clustering-in-practice/",
+    "image": "/notes/classical-ml--017-clustering-in-practice.webp"
+  },
+  {
+    "title": "Clustering Methods",
+    "description": "The main clustering algorithms organised by the shape each assumes a cluster has — centroid, covariance, density, graph cut, hierarchy — where each fits, and a comparative table of the family.",
+    "date": "2026-04-28",
+    "updated": "2026-06-28",
+    "track": "Classical ML",
+    "tags": [
+      "clustering",
+      "k-means",
+      "gmm",
+      "hdbscan",
+      "dbscan",
+      "spectral"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/classical-ml/015-clustering-methods/",
+    "image": "/notes/classical-ml--015-clustering-methods.webp"
+  },
+  {
+    "title": "Control Function Approach",
+    "description": "The control function approach as the residual-based alternative to 2SLS — when the two agree, what CF's structural assumption actually is, where an ML-flexible first stage helps and where it does not, and how the idea extends through cross-fitting into double / debiased machine learning.",
+    "date": "2026-04-28",
+    "updated": "2026-06-07",
+    "track": "Econometrics",
+    "tags": [
+      "causal-inference",
+      "iv",
+      "ml-econometrics",
+      "double-ml"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/econometrics/004-control-function/",
+    "image": "/notes/econometrics--004-control-function.webp"
+  },
+  {
+    "title": "Data Storage Formats",
+    "description": "Why CSV, JSON, and Parquet all coexist in real pipelines: file size, read speed, and tool compatibility rarely peak in the same format.",
+    "date": "2026-04-28",
+    "updated": "2026-05-04",
+    "track": "Storage and Streaming",
+    "tags": [
+      "csv",
+      "json",
+      "parquet"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/storage-and-streaming/001-data-formats/",
+    "image": "/notes/storage-and-streaming--001-data-formats.webp"
+  },
+  {
+    "title": "Data Streams: Kafka and Protobuf",
+    "description": "Kafka as a distributed log for streaming data transport, and Protobuf as a compact binary serialization format — how each works, when to use them, and why they pair well together.",
+    "date": "2026-04-28",
+    "updated": "2026-05-04",
+    "track": "Storage and Streaming",
+    "tags": [
+      "kafka",
+      "protobuf"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/storage-and-streaming/002-streaming-kafka/",
+    "image": "/notes/storage-and-streaming--002-streaming-kafka.webp"
+  },
+  {
+    "title": "Deep Learning Architectures for Time Series",
+    "description": "An overview of deep learning architectures for time-series forecasting: LSTM, TCN, DeepAR, N-BEATS, and TFT, with a focus on input shapes, local vs global training, covariates, probabilistic outputs, and practical model selection.",
+    "date": "2026-04-28",
+    "updated": "2026-05-05",
+    "track": "Time Series",
+    "tags": [
+      "lstm",
+      "n-beats",
+      "tft",
+      "deepar"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/time-series/005-deep-learning-architectures/",
+    "image": "/notes/time-series--005-deep-learning-architectures.webp"
+  },
+  {
+    "title": "Endogeneity",
+    "description": "Endogeneity — what it is formally, why OLS becomes biased and inconsistent under it, the three main sources (omitted variables, simultaneity, measurement error) plus self-selection, how to detect it in practice, and why this is the central problem the rest of the Econometrics track is built around.",
+    "date": "2026-04-28",
+    "updated": "2026-06-07",
+    "track": "Econometrics",
+    "tags": [
+      "endogeneity",
+      "causal-inference",
+      "ols",
+      "ovb"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/econometrics/001-endogeneity/",
+    "image": "/notes/econometrics--001-endogeneity.webp"
+  },
+  {
+    "title": "How LLM Generation Works: Transformer, Sampling, Tokens, Batching, and Validation",
+    "description": "What happens inside a transformer when you send a prompt, and how the practical knobs — temperature, max_tokens, structured outputs, batching strategy, retry-with-catch-up — fall out of that picture.",
+    "date": "2026-04-28",
+    "updated": "2026-05-27",
+    "track": "LLM",
+    "tags": [
+      "llm",
+      "transformers",
+      "attention",
+      "tokenization"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/llm/001-llm-fundamentals/",
+    "image": "/notes/llm--001-llm-fundamentals.webp"
+  },
+  {
+    "title": "Instrumental Variables (2SLS)",
+    "description": "Instrumental Variables / 2SLS as the foundational tool for causal inference in observational data when the treatment is endogenous — the IV idea in plain terms, the four conditions a valid instrument must satisfy (relevance, exclusion, independence, monotonicity), the two-stage estimator, weak-instrument diagnostics beyond the F>10 rule, what IV actually identifies (LATE, not ATE), and worked instrument choices for pricing problems.",
+    "date": "2026-04-28",
+    "updated": "2026-06-07",
+    "track": "Econometrics",
+    "tags": [
+      "iv",
+      "2sls",
+      "causal-inference",
+      "late"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/econometrics/002-instrumental-variables/",
+    "image": "/notes/econometrics--002-instrumental-variables.webp"
+  },
+  {
+    "title": "Interpretability and Production Maintenance for Deep Learning Time Series",
+    "description": "A practical guide to the post-training lifecycle of deep learning forecasters, covering SHAP-based prediction explanations, lightweight recalibration for drift, and the broader production-maintenance roadmap.",
+    "date": "2026-04-28",
+    "updated": "2026-05-14",
+    "track": "Time Series",
+    "tags": [
+      "interpretability",
+      "shap",
+      "model-maintenance"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/time-series/010-interpretability-production/",
+    "image": "/notes/time-series--010-interpretability-production.webp"
+  },
+  {
+    "title": "Knowledge Distillation: What a Teacher Actually Teaches",
+    "description": "Training a small model on a large model's probabilities instead of the true labels often gives a better small model. Why that works, taken apart one ingredient at a time; what happens when the labels the teacher learned from were wrong; whether a stronger teacher makes a stronger student; what to copy, on which data and about which view of it; how long to train and how big the student should be before any of this matters; why copying the teacher and being right are different numbers; how a student can beat its teacher and which of its flaws it inherits; what changes for language models without logits; and when distillation pays for itself — measured on CIFAR-10 and on a small language model trained on this site's notes.",
+    "date": "2026-04-28",
+    "updated": "2026-09-18",
+    "track": "Deep Learning",
+    "tags": [
+      "knowledge-distillation",
+      "model-compression",
+      "kl-divergence",
+      "regularization",
+      "calibration",
+      "llm",
+      "synthetic-data"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/deep-learning/003-knowledge-distillation/",
+    "image": "/notes/deep-learning--003-knowledge-distillation.webp"
+  },
+  {
+    "title": "LLM Agent Architectures",
+    "description": "Agent architecture is where LLM engineering stops being mostly about prompts and starts looking like distributed systems. Covers workflows vs agents, the classical loop, five paradigms (ReAct, Function Calling, Plan-and-Execute, Reflection, CodeAct), MCP as the protocol layer above per-vendor function calling, multi-agent patterns, computer use, memory and resumability, production failure modes including indirect prompt injection, tool security, cost levers, and observability.",
+    "date": "2026-04-28",
+    "updated": "2026-05-27",
+    "track": "LLM",
+    "tags": [
+      "agent-architectures",
+      "tool-use",
+      "mcp",
+      "multi-agent"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/llm/006-agent-architectures/",
+    "image": "/notes/llm--006-agent-architectures.webp"
+  },
+  {
+    "title": "Neural Network Architectures and PyTorch (MLP, CNN, RNN/LSTM)",
+    "description": "An architecture is a claim about your data, and every claim here is measured: why a stack of linear layers is one straight line, what a CNN's first layer actually learns, how fast a receptive field grows, where an RNN's gradient dies — and PyTorch as three ideas: a tensor, a tape, and a module.",
+    "date": "2026-04-28",
+    "updated": "2026-07-21",
+    "track": "Deep Learning",
+    "tags": [
+      "deep-learning",
+      "pytorch",
+      "cnn",
+      "lstm"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/deep-learning/001-deep-learning-frameworks/",
+    "image": "/notes/deep-learning--001-deep-learning-frameworks.webp"
+  },
+  {
+    "title": "Object Storage",
+    "description": "Covers the object storage model — buckets, keys, versioning, lifecycle policies — and Minio as a self-hosted S3-compatible implementation.",
+    "date": "2026-04-28",
+    "updated": "2026-05-04",
+    "track": "Storage and Streaming",
+    "tags": [
+      "object-storage",
+      "s3",
+      "minio"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/storage-and-streaming/003-object-storage/",
+    "image": "/notes/storage-and-streaming--003-object-storage.webp"
+  },
+  {
+    "title": "Panel Data (Fixed Effects)",
+    "description": "Fixed effects for panel data — the within-transformation, what it controls for and what it misses, cluster-robust standard errors, the LSDV equivalence, the staggered-DiD problem, and when FE is the right tool.",
+    "date": "2026-04-28",
+    "updated": "2026-06-07",
+    "track": "Econometrics",
+    "tags": [
+      "fixed-effects",
+      "did",
+      "panel",
+      "causal-inference"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/econometrics/005-panel-data/",
+    "image": "/notes/econometrics--005-panel-data.webp"
+  },
+  {
+    "title": "Playing with a Hybrid Architecture for Forecasting",
+    "description": "Playing with a hybrid forecasting architecture, assembled out of common neural building blocks: TCN front-end, LSTM recurrence, multi-head attention, TFT-style VSN feature routing with GRN, N-BEATS-style decomposition heads, seasonal and event branches.",
+    "date": "2026-04-28",
+    "updated": "2026-05-05",
+    "track": "Time Series",
+    "tags": [
+      "lstm",
+      "deep-learning"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/time-series/008-hybrid-lstm/",
+    "image": "/notes/time-series--008-hybrid-lstm.webp"
+  },
+  {
+    "title": "Practical Training Recipes for Deep Learning Time Series",
+    "description": "A practical checklist for training deep learning time-series models, covering windowing, initialization, embeddings, regularization, optimizers, learning-rate schedules, loss functions, and the Keras training workflow.",
+    "date": "2026-04-28",
+    "updated": "2026-05-06",
+    "track": "Time Series",
+    "tags": [
+      "training",
+      "regularization",
+      "optimization"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/time-series/009-training-recipes/",
+    "image": "/notes/time-series--009-training-recipes.webp"
+  },
+  {
+    "title": "Pricing and Elasticity",
+    "description": "Pricing as the worked-example for the Econometrics track — why price is endogenous, the identification strategies (IV, FE, RD, DML, CATE), cross-price elasticity and cannibalization, and what-if analysis with its constant-elasticity caveats.",
+    "date": "2026-04-28",
+    "updated": "2026-06-07",
+    "track": "Econometrics",
+    "tags": [
+      "pricing",
+      "elasticity",
+      "demand",
+      "causal-inference"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/econometrics/007-pricing-elasticity/",
+    "image": "/notes/econometrics--007-pricing-elasticity.webp"
+  },
+  {
+    "title": "Prompt Engineering",
+    "description": "What separates a working LLM prompt from a flaky one in 2026 — instruction hierarchy, in-context learning, chain-of-thought, structured outputs, reasoning-model specifics, and the prompt-injection trust boundary.",
+    "date": "2026-04-28",
+    "updated": "2026-05-08",
+    "track": "LLM",
+    "tags": [
+      "prompt-engineering"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/llm/004-prompt-engineering/",
+    "image": "/notes/llm--004-prompt-engineering.webp"
+  },
+  {
+    "title": "Regression Discontinuity",
+    "description": "Regression discontinuity as a quasi-experimental method built on a threshold-based assignment rule — the continuity assumption that does the identification work, sharp and fuzzy variants, the modern bandwidth and diagnostic toolkit, and why the resulting effect is local to the cutoff rather than population-wide.",
+    "date": "2026-04-28",
+    "updated": "2026-06-07",
+    "track": "Econometrics",
+    "tags": [
+      "rdd",
+      "causal-inference",
+      "quasi-experiment",
+      "late"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/econometrics/003-regression-discontinuity/",
+    "image": "/notes/econometrics--003-regression-discontinuity.webp"
+  },
+  {
+    "title": "Relational Databases",
+    "description": "A practitioner's overview of PostgreSQL: how it handles concurrency (MVCC), its type system, index types, and the Python tooling stack for working with it.",
+    "date": "2026-04-28",
+    "updated": "2026-05-04",
+    "track": "Storage and Streaming",
+    "tags": [
+      "relational-databases",
+      "postgresql",
+      "sqlalchemy",
+      "alembic"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/storage-and-streaming/004-relational-databases/",
+    "image": "/notes/storage-and-streaming--004-relational-databases.webp"
+  },
+  {
+    "title": "RNN and LSTM for Time-Series Forecasting",
+    "description": "How recurrent networks model sequences: vanilla RNN, the vanishing-gradient problem, the LSTM gating mechanism, cell state, and the practical use of return_sequences in Keras.",
+    "date": "2026-04-28",
+    "updated": "2026-05-05",
+    "track": "Time Series",
+    "tags": [
+      "lstm",
+      "rnn",
+      "vanishing-gradients"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/time-series/006-lstm-rnn/",
+    "image": "/notes/time-series--006-lstm-rnn.webp"
+  },
+  {
+    "title": "TCN: Causal and Dilated Convolutions for Time Series Forecasting",
+    "description": "A practical explanation of Temporal Convolutional Networks for time-series forecasting: causal convolutions, dilations, receptive field, residual blocks, optional GLU gating, output heads, and when TCN is useful as a standalone or hybrid forecasting component.",
+    "date": "2026-04-28",
+    "updated": "2026-05-05",
+    "track": "Time Series",
+    "tags": [
+      "tcn"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/time-series/007-tcn/",
+    "image": "/notes/time-series--007-tcn.webp"
+  },
+  {
+    "title": "Text Clustering: Representation Over Algorithm",
+    "description": "One corpus of arXiv abstracts, clustered nine ways — and the finding that on real text the representation usually decides more than the algorithm.",
+    "date": "2026-04-28",
+    "updated": "2026-06-28",
+    "track": "Classical ML",
+    "tags": [
+      "clustering",
+      "text",
+      "embeddings",
+      "tf-idf",
+      "topic-modelling",
+      "bertopic"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/classical-ml/020-text-clustering/",
+    "image": "/notes/classical-ml--020-text-clustering.webp"
+  },
+  {
+    "title": "Time Series Data: Univariate, Multivariate, Panel, and Exogenous Variables",
+    "description": "A practical guide to the main types of time series data and the common confusion between multivariate, panel, and exogenous-variable forecasting.",
+    "date": "2026-04-28",
+    "updated": "2026-05-03",
+    "track": "Time Series",
+    "tags": [
+      "forecasting",
+      "multivariate"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/time-series/001-ts-data/",
+    "image": "/notes/time-series--001-ts-data.webp"
+  },
+  {
+    "title": "Time Series Preprocessing: Interpolation, Bucketing, Time Zones, and Missing Intervals",
+    "description": "A hands-on explanation of how raw time series data is cleaned, regularized, interpolated, bucketed, and prepared for reliable modeling or visualization.",
+    "date": "2026-04-28",
+    "updated": "2026-05-03",
+    "track": "Time Series",
+    "tags": [
+      "preprocessing",
+      "interpolation",
+      "bucketing"
+    ],
+    "short": false,
+    "href": "https://lenatriestounderstand.com/notes/time-series/002-ts-preprocessing/",
+    "image": "/notes/time-series--002-ts-preprocessing.webp"
+  }
+]

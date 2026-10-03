@@ -1,0 +1,161 @@
+---
+// Home page: dark, full-bleed portrait. Standalone document (does not use the
+// shared light layout) so its look can't leak into the other pages.
+import "@fontsource-variable/inter";
+import "../styles/global.css";
+import { profile, links } from "../data/site";
+
+const social = links.filter((l) => l.href && (l.label === "LinkedIn" || l.label === "GitHub"));
+
+const nav = [
+  { label: "Home", href: "/", active: true },
+  { label: "Projects", href: "/projects/" },
+  { label: "Writing", href: "/writing/" },
+  { label: "CV", href: "/cv/" },
+];
+
+// icon: key into the inline SVG set below
+const tiles = [
+  { icon: "doc", label: "CV", caption: "Experience & skills", href: "/cv/" },
+  { icon: "grid", label: "Projects", caption: "Personal projects", href: "/projects/" },
+  { icon: "pen", label: "Writing", caption: "Notes & essays", href: "/writing/" },
+  ...social.map((l) => ({
+    icon: l.label === "GitHub" ? "github" : "linkedin",
+    label: l.label,
+    caption: l.label === "GitHub" ? "Code" : "Professional profile",
+    href: l.href,
+  })),
+  { icon: "mail", label: "Contact", caption: "Email", href: `mailto:${profile.email}` },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{profile.name}</title>
+    <meta name="description" content={profile.homeIntro} />
+    <meta property="og:title" content={profile.name} />
+    <meta property="og:description" content={profile.homeIntro} />
+    <meta name="theme-color" content="#121010" />
+  </head>
+  <body>
+    <div class="page">
+      <figure class="photo">
+        <img src="/portrait-studio.webp" alt={`Portrait of ${profile.name}`} width="1100" height="1375" fetchpriority="high" />
+      </figure>
+
+      <nav class="top" aria-label="Main">
+        {nav.map((n) => <a href={n.href} aria-current={n.active ? "page" : undefined}>{n.label}</a>)}
+      </nav>
+
+      <main class="copy">
+        <h1>{profile.name}</h1>
+        <p class="field">{profile.field}</p>
+        <div class="bio">
+          <p>
+            I'm interested in what lies underneath AI, machine learning and the systems that run them: why
+            models behave the way they do, where they quietly fail, and when their answers can be trusted.
+          </p>
+        </div>
+        <hr />
+        <ul class="tiles">
+          {tiles.map((t) => (
+            <li>
+              <a href={t.href}>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  {t.icon === "doc" && (<><path d="M6 3h8l4 4v14H6z" /><path d="M14 3v4h4" /><path d="M9 11h6M9 14h6M9 17h4" /></>)}
+                  {t.icon === "grid" && (<><rect x="4" y="4" width="7" height="7" rx="1" /><rect x="13" y="4" width="7" height="7" rx="1" /><rect x="4" y="13" width="7" height="7" rx="1" /><rect x="13" y="13" width="7" height="7" rx="1" /></>)}
+                  {t.icon === "pen" && (<><path d="M4 20l1-4L16.5 4.5a2.1 2.1 0 0 1 3 3L8 19z" /><path d="M14.5 6.5l3 3" /></>)}
+                  {t.icon === "mail" && (<><rect x="3" y="5" width="18" height="14" rx="1.5" /><path d="M3.5 6l8.5 7 8.5-7" /></>)}
+                  {t.icon === "linkedin" && (<><rect x="4" y="9" width="3" height="11" /><circle cx="5.5" cy="5.5" r="1.5" /><path d="M10 20V9h3v2c.8-1.4 2-2.2 3.6-2.2C19 8.8 20 10.4 20 13v7h-3v-6.5c0-1.4-.6-2.2-1.8-2.2s-2.2.9-2.2 2.4V20z" /></>)}
+                  {t.icon === "github" && (<path d="M9 19c-4 1.3-4-2-5.5-2.5M14.5 21v-3.4a3 3 0 0 0-.8-2.3c2.7-.3 5.5-1.3 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6 2.6 5 2.9 5 2.9a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 3.6 9.3c0 4.6 2.8 5.7 5.5 6a3 3 0 0 0-.8 2.3V21" />)}
+                </svg>
+                <span class="label">{t.label}</span>
+                {t.caption && <span class="caption">{t.caption}</span>}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </main>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  html, body { background: #121010; color: #f2efea; }
+</style>
+
+<style>
+  .page {
+    --ink: #f2efea;
+    --soft: #a7a19a;
+    --faint: #6f6a64;
+    position: relative;
+    min-height: 100svh;
+    overflow: hidden;
+    font-family: "Inter Variable", system-ui, sans-serif;
+  }
+
+  /* portrait: right half, full height, edges dissolve into the page */
+  .photo {
+    position: absolute; inset: 0 0 0 auto; width: 52%; margin: 0;
+  }
+  .photo img {
+    width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; display: block;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 28%), linear-gradient(to top, transparent 0%, #000 22%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 28%), linear-gradient(to top, transparent 0%, #000 22%);
+    -webkit-mask-composite: source-in; mask-composite: intersect;
+  }
+
+  .top {
+    position: relative; z-index: 1;
+    display: flex; flex-wrap: wrap; gap: 0.5rem 3.5rem;
+    padding: 2.75rem clamp(16px, 6vw, 6rem) 0;
+  }
+  .top a { color: var(--soft); text-decoration: none; font-size: 1.02rem; padding-bottom: 0.55rem; border-bottom: 1.5px solid transparent; transition: color 0.2s; }
+  .top a:hover { color: var(--ink); }
+  .top a[aria-current="page"] { color: var(--ink); border-color: var(--ink); }
+
+  .copy {
+    position: relative; z-index: 1;
+    width: min(58%, 54rem);
+    min-height: calc(100svh - 6rem);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 3rem 0 4rem clamp(16px, 6vw, 6rem);
+  }
+  h1 {
+    margin: 0; color: var(--ink);
+    font-family: inherit; font-weight: 300;
+    font-size: clamp(2.8rem, 5.6vw, 6.2rem); line-height: 0.98; white-space: nowrap; letter-spacing: -0.035em;
+  }
+  .field { margin: 1.1rem 0 0; color: var(--ink); font-weight: 300; font-size: clamp(1.1rem, 1.6vw, 1.6rem); white-space: nowrap; line-height: 1.3; letter-spacing: -0.005em; }
+  .bio { margin-top: 1.8rem; max-width: 46ch; color: var(--soft); font-size: 1.12rem; line-height: 1.7; font-weight: 350; }
+  .bio p { margin: 0 0 0.9rem; }
+  .bio a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--faint); }
+  .bio a:hover { border-color: var(--ink); }
+  hr { width: 4.5rem; margin: 2.2rem 0 2.4rem; border: 0; border-top: 1px solid var(--faint); }
+
+  .tiles { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 1.75rem 3rem; }
+  .tiles a { display: flex; flex-direction: column; color: var(--ink); text-decoration: none; }
+  .icon { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 0.9rem; transition: transform 0.25s; }
+  .label { font-size: 1.05rem; }
+  .caption { margin-top: 0.3rem; font-size: 0.8rem; color: var(--soft); transition: color 0.2s; }
+  .tiles a:hover .icon { transform: translateY(-2px); }
+  .tiles a:hover .caption { color: var(--ink); }
+
+  @media (max-width: 860px) {
+    .photo { position: relative; width: 100%; height: 62svh; }
+    .photo img {
+      object-position: 50% 15%;
+      -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 35%);
+      mask-image: linear-gradient(to top, transparent 0%, #000 35%);
+    }
+    .top { position: absolute; top: 0; left: 0; right: 0; gap: 0.5rem 1.6rem; padding-top: 1.25rem; }
+    .top a { font-size: 0.95rem; text-shadow: 0 1px 8px rgb(0 0 0 / 0.6); }
+    h1, .field { white-space: normal; }
+    .copy { width: auto; min-height: 0; margin-top: -4rem; padding: 0 16px 3.5rem; }
+    .tiles { gap: 1.5rem 2rem; }
+  }
+</style>

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+.claude/
+# Old page drafts stay local, out of the public repo
+src/pages/_versions/

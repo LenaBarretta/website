@@ -1,0 +1,17 @@
+---
+// Small monochrome brand logo from simple-icons, tinted with currentColor.
+import * as icons from "simple-icons";
+
+interface Props {
+  slug: string;
+  size?: number;
+}
+const { slug, size = 14 } = Astro.props;
+const key = `si${slug[0].toUpperCase()}${slug.slice(1)}` as keyof typeof icons;
+const icon = icons[key] as { path: string; title: string } | undefined;
+---
+{icon && (
+  <svg class="brand-icon" viewBox="0 0 24 24" width={size} height={size} role="img" aria-label={icon.title} fill="currentColor">
+    <path d={icon.path} />
+  </svg>
+)}
