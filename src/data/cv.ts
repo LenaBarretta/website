@@ -121,6 +121,13 @@ export const research = {
 /** Personal projects: name + a few words each. */
 export const personalProjects = [
   {
+    name: "Sharada",
+    blurb: "typed decisions about text in one forward pass",
+    note: "pip install sharada",
+    href: "https://github.com/LenaBarretta/sharada",
+    image: "/projects/sharada.webp",
+  },
+  {
     name: "tidyenv",
     blurb: "typed environment variables for Python",
     note: "pip install tidyenv",

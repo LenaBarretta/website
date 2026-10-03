@@ -80,6 +80,22 @@ export const lenatriestounderstand: Project = {
 export const personalProjects: Project[] = [
   lenatriestounderstand,
   {
+    title: "Sharada",
+    summary:
+      "A small encoder that makes typed decisions about text in one forward pass: the options come with the request, and what comes back is a calibrated probability for each of them. Nothing is generated or parsed, and the model answers questions it has never seen.",
+    tags: ["NLP", "Calibration", "Open source"],
+    href: "https://github.com/LenaBarretta/sharada",
+    image: "/projects/sharada.webp",
+    install: "pip install sharada",
+    links: [
+      { label: "GitHub", href: "https://github.com/LenaBarretta/sharada" },
+      { label: "PyPI", href: "https://pypi.org/project/sharada/" },
+      { label: "HF Base", href: "https://huggingface.co/LenaBarretta/sharada-base" },
+      { label: "HF Large", href: "https://huggingface.co/LenaBarretta/sharada-large" },
+      { label: "Write-up", href: "https://lenatriestounderstand.com/notes/llm/024-rlcr/" },
+    ],
+  },
+  {
     title: "tidyenv",
     summary:
       "Typed environment variables with friendly errors for Python. Built-in .env support, zero dependencies: one line per variable, and every error names the variable and says what is wrong with it.",
