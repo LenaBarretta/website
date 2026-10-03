@@ -15,7 +15,7 @@ export type CvProject = {
 
 export const header = {
   name: "Elena Raikova",
-  title: "Senior AI and Machine Learning Engineer",
+  title: "Senior AI and Machine Learning Engineer / Technical Lead",
   location: "Buenos Aires, Argentina",
   email: "lenabarretta@gmail.com",
   linkedin: "", // TODO: add profile URL
