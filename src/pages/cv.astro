@@ -53,7 +53,6 @@ import { header, job, research, personalProjects, skills, education } from "../d
         <article class="proj">
           <div class="proj-head">
             <h4>{p.title}</h4>
-            {p.role && <span class="pill">{p.role}</span>}
           </div>
           <ul class="bullets">{p.bullets.map((b) => <li>{b}</li>)}</ul>
           {p.caseStudy && (
@@ -156,7 +155,6 @@ import { header, job, research, personalProjects, skills, education } from "../d
   .proj { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1.25rem 1.4rem; }
   .proj-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.4rem 0.75rem; margin-bottom: 0.6rem; }
   h4 { margin: 0; font-size: 1.05rem; font-weight: 500; }
-  .pill { font-size: 0.75rem; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 0.15rem 0.6rem; }
   .bullets { margin: 0; padding-left: 1.1rem; color: var(--muted); font-size: 0.95rem; }
   .bullets li { margin-bottom: 0.35rem; }
   .bullets li::marker { color: var(--faint); }

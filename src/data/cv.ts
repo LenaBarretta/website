@@ -8,7 +8,6 @@
 
 export type CvProject = {
   title: string;
-  role?: string;
   bullets: string[];
   caseStudy?: { href: string; image: string };
 };
@@ -35,7 +34,6 @@ export const job = {
   projects: [
     {
       title: "Failure-attribution evaluation for RAG & agents",
-      role: "architecture owner",
       bullets: [
         "Reusable evaluation framework that turns a pass/fail score into a diagnosis — pinpointing which stage failed with transition matrices across runs",
         "Scored semantic quality with an LLM judge calibrated against human labels",
@@ -58,7 +56,6 @@ export const job = {
     },
     {
       title: "Agentic AI workflow automation",
-      role: "architecture owner",
       bullets: [
         "Agentic workflow automation for a manual royalty-approval process (20k requests/year): LLM-assisted agents embedded in a Power Automate workflow to extract, normalize, and validate Excel/PDF requests, with decision traces shown in Teams adaptive cards.",
         "Separated deterministic business rules from LLM-assisted decisions, with confidence-based abstention, human approval, sanctions checks, subscription/price-book validation, idempotent processing, malformed-document handling, and full audit trails",
