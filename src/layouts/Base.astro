@@ -9,7 +9,7 @@ interface Props {
   /** Wider content column (home page). */
   wide?: boolean;
 }
-const { title, description = profile.homeIntro, wide = false } = Astro.props;
+const { title, description = profile.intro, wide = false } = Astro.props;
 const pageTitle = title ? `${title} · ${profile.name}` : profile.name;
 const path = Astro.url.pathname;
 const nav = [

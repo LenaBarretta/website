@@ -37,18 +37,13 @@ export type ExternalItem = {
 export const profile = {
   name: "Elena Raikova",
   shortName: "Lena",
-  role: "Senior AI/ML & Research Engineer",
   /** Home page: what I work on (a field, not a job title). */
   field: "AI & Machine Learning · Serious research & occasional mischief",
   location: "Buenos Aires, Argentina",
   email: "lenabarretta@gmail.com",
-  /** Home page: a couple of sentences, no more. */
-  homeIntro:
-    "I design and ship machine-learning systems, from problem framing to production: LLM evaluation, agents, forecasting.",
-  /** CV page summary. */
-  cvIntro:
-    "13 years in production software engineering, including 5 years building end-to-end AI and ML systems: LLM/RAG evaluation, agentic automation, demand forecasting with causal pricing, and classical and deep learning. I own architecture from problem framing to deployment, and I back decisions with experiments.",
-  focus: ["LLM & RAG evaluation", "Agentic AI", "Forecasting & causal inference", "Deep learning"],
+  /** Home page text; also the site's meta description. */
+  intro:
+    "I'm interested in what lies underneath AI, machine learning and the systems that run them: why models behave the way they do, where they quietly fail, and when their answers can be trusted.",
   /**
    * Path to the PDF CV inside /public (e.g. "/Elena_Raikova_CV.pdf").
    * Leave empty while the PDF isn't ready — the button shows as a placeholder.

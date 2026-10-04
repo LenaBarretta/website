@@ -35,9 +35,9 @@ const tiles = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{profile.name}</title>
-    <meta name="description" content={profile.homeIntro} />
+    <meta name="description" content={profile.intro} />
     <meta property="og:title" content={profile.name} />
-    <meta property="og:description" content={profile.homeIntro} />
+    <meta property="og:description" content={profile.intro} />
     <meta name="theme-color" content="#121010" />
   </head>
   <body>
@@ -54,10 +54,7 @@ const tiles = [
         <h1>{profile.name}</h1>
         <p class="field">{profile.field}</p>
         <div class="bio">
-          <p>
-            I'm interested in what lies underneath AI, machine learning and the systems that run them: why
-            models behave the way they do, where they quietly fail, and when their answers can be trusted.
-          </p>
+          <p>{profile.intro}</p>
         </div>
         <hr />
         <ul class="tiles">
