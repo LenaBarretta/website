@@ -128,6 +128,13 @@ export const personalProjects = [
     image: "/projects/sharada.webp",
   },
   {
+    name: "torchrolling",
+    blurb: "pandas-style rolling statistics for PyTorch, fast on GPU",
+    note: "pip install torchrolling",
+    href: "https://github.com/LenaBarretta/torchrolling",
+    image: "/projects/torchrolling.webp",
+  },
+  {
     name: "tidyenv",
     blurb: "typed environment variables for Python",
     note: "pip install tidyenv",

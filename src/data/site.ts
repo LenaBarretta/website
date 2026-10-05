@@ -91,6 +91,19 @@ export const personalProjects: Project[] = [
     ],
   },
   {
+    title: "torchrolling",
+    summary:
+      "Pandas-style rolling and exponentially weighted statistics for PyTorch tensors, fast on GPU. O(1) work per element for any window, fused Triton kernels on CUDA, autograd and torch.compile support, and the same numbers as pandas.",
+    tags: ["PyTorch", "GPU", "Open source"],
+    href: "https://github.com/LenaBarretta/torchrolling",
+    image: "/projects/torchrolling.webp",
+    install: "pip install torchrolling",
+    links: [
+      { label: "GitHub", href: "https://github.com/LenaBarretta/torchrolling" },
+      { label: "PyPI", href: "https://pypi.org/project/torchrolling/" },
+    ],
+  },
+  {
     title: "tidyenv",
     summary:
       "Typed environment variables with friendly errors for Python. Built-in .env support, zero dependencies: one line per variable, and every error names the variable and says what is wrong with it.",
