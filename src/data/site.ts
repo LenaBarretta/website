@@ -75,7 +75,20 @@ export const lenatriestounderstand: Project = {
 export const personalProjects: Project[] = [
   lenatriestounderstand,
   {
-    title: "Sharada",
+    title: "torchisotonic",
+    summary:
+      "Batched isotonic regression for PyTorch tensors, fast on the GPU. Fits every row of a tensor at once, on CPU or with CUDA kernels, with the same results as scikit-learn: calibrating classifiers and monotone fits inside models, from a few elements per row to a hundred million.",
+    tags: ["PyTorch", "GPU", "Calibration"],
+    href: "https://github.com/LenaBarretta/torchisotonic",
+    image: "/projects/torchisotonic.webp",
+    install: "pip install torchisotonic",
+    links: [
+      { label: "GitHub", href: "https://github.com/LenaBarretta/torchisotonic" },
+      { label: "PyPI", href: "https://pypi.org/project/torchisotonic/" },
+    ],
+  },
+  {
+    title: "sharada",
     summary:
       "A small encoder that makes typed decisions about text in one forward pass: the options come with the request, and what comes back is a calibrated probability for each of them. Nothing is generated or parsed, and the model answers questions it has never seen.",
     tags: ["NLP", "Calibration", "Open source"],

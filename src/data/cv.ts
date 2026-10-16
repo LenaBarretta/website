@@ -121,7 +121,14 @@ export const research = {
 /** Personal projects: name + a few words each. */
 export const personalProjects = [
   {
-    name: "Sharada",
+    name: "torchisotonic",
+    blurb: "batched isotonic regression for PyTorch, fast on GPU",
+    note: "pip install torchisotonic",
+    href: "https://github.com/LenaBarretta/torchisotonic",
+    image: "/projects/torchisotonic.webp",
+  },
+  {
+    name: "sharada",
     blurb: "typed decisions about text in one forward pass",
     note: "pip install sharada",
     href: "https://github.com/LenaBarretta/sharada",
