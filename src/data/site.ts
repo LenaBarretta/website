@@ -55,7 +55,7 @@ export const profile = {
 export const links: Link[] = [
   { label: "Email", href: "mailto:lenabarretta@gmail.com" },
   { label: "lenatriestounderstand", href: "https://lenatriestounderstand.com" },
-  { label: "LinkedIn", href: "" }, // TODO: add profile URL
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/elena-raikova-775478110" },
   { label: "GitHub", href: "" }, // TODO: add profile URL
 ];
 

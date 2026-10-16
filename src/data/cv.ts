@@ -17,7 +17,7 @@ export const header = {
   title: "Senior AI and Machine Learning Engineer / Technical Lead",
   location: "Buenos Aires, Argentina",
   email: "lenabarretta@gmail.com",
-  linkedin: "", // TODO: add profile URL
+  linkedin: "https://www.linkedin.com/in/elena-raikova-775478110",
   website: { label: "lenatriestounderstand.com", href: "https://lenatriestounderstand.com" },
   summary: [
     "13 years in production software engineering, including 5 years in end-to-end AI and ML systems.",
