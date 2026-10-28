@@ -28,10 +28,13 @@ export type Project = {
 export type ExternalItem = {
   title: string;
   href?: string;
-  /** Where it was published / presented. */
+  /** Where it was published / presented, e.g. "arXiv". */
   venue?: string;
+  /** ISO date, e.g. "2026-10-23". */
   date?: string;
   summary?: string;
+  /** Square thumbnail (path inside /public). */
+  image?: string;
 };
 
 export const profile = {
@@ -132,4 +135,14 @@ export const personalProjects: Project[] = [
 ];
 
 /** Articles published elsewhere. Posts written on this site come from src/content/writing. */
-export const externalWriting: ExternalItem[] = [];
+export const externalWriting: ExternalItem[] = [
+  {
+    title: "Merge Hulls Without Copying Vertices: GPU Isotonic Regression",
+    href: "https://arxiv.org/abs/2610.24038",
+    venue: "arXiv",
+    date: "2026-10-23",
+    summary:
+      "A parallel isotonic regression that merges convex hulls as lists of segments instead of copying vertices. On dense hulls the merge phase is 17 to 276 times faster on four NVIDIA GPUs, and a differentiable soft rank built on it trains 1.5 to 40 times faster. The algorithm behind torchisotonic.",
+    image: "/writing/arxiv-2610.24038.webp",
+  },
+];

@@ -6,6 +6,12 @@ import { externalWriting } from "../../data/site";
 import { articles, formatNoteDate } from "../../lib/notes";
 
 const posts = await getPosts();
+
+// Notes from lenatriestounderstand and writing published elsewhere, newest first.
+const items = [
+  ...articles.map((a) => ({ title: a.title, href: a.href, description: a.description, image: a.image, kicker: a.track, date: a.date })),
+  ...externalWriting.map((e) => ({ title: e.title, href: e.href ?? "", description: e.summary, image: e.image, kicker: e.venue, date: e.date ?? "" })),
+].sort((a, b) => b.date.localeCompare(a.date));
 ---
 <Base title="Writing" description="Writing on AI, machine learning and ML systems.">
   <h1>Writing</h1>
@@ -18,32 +24,11 @@ const posts = await getPosts();
     </section>
   )}
 
-  {articles.length > 0 && (
+  {items.length > 0 && (
     <section>
-      {articles.map((a) => (
-        <ArticleRow title={a.title} href={a.href} description={a.description} image={a.image} kicker={a.track} date={formatNoteDate(a.date)} external />
+      {items.map((i) => (
+        <ArticleRow title={i.title} href={i.href} description={i.description} image={i.image} kicker={i.kicker} date={formatNoteDate(i.date)} external />
       ))}
     </section>
   )}
-
-  {externalWriting.length > 0 && (
-    <section class="shorts">
-      <h2>Elsewhere</h2>
-      <ul>
-        {externalWriting.map((e) => (
-          <li><a href={e.href}>{e.title}</a><span class="muted">{e.venue}</span></li>
-        ))}
-      </ul>
-    </section>
-  )}
 </Base>
-
-<style>
-  .shorts { margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--line); }
-  .shorts h2 { margin-bottom: 0.4rem; }
-  .shorts ul { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 0.2rem 2rem; }
-  .shorts li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.6rem 0; border-bottom: 1px dashed var(--line); font-size: 0.95rem; }
-  .shorts li a { color: var(--text); text-decoration: none; }
-  .shorts li a:hover { color: var(--accent); }
-  .shorts li span { white-space: nowrap; font-size: 0.85rem; }
-</style>
